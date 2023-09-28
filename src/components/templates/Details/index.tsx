@@ -6,6 +6,7 @@ import { VscDesktopDownload, VscStarFull } from "react-icons/vsc";
 import GenreItem from "./GenreItem/GenreItem";
 import StatisticItem from "./StatisticItem/StatisticItem";
 import Torrent from "./TorrentItem";
+import CommentItem from "./CommentItem/CommentItem";
 
 import { AiTwotoneLike } from "react-icons/ai";
 
@@ -35,6 +36,15 @@ const Details = () => {
       />
     );
   });
+
+  const commentsList = () => {
+    return (
+      <CommentItem
+        userName = "Paul"
+        text = "Great film!"
+      />
+    );
+  }
 
   return (
     <Style.Details>
@@ -98,6 +108,11 @@ const Details = () => {
             <Style.TorrentsTitle>Downloads:</Style.TorrentsTitle>
 
             <Style.Torrents>{torrentsList}</Style.Torrents>
+
+            <Style.CommentsTitle>Comments:</Style.CommentsTitle>
+
+            <Style.CommentItem>{commentsList()}</Style.CommentItem>
+
           </Style.Description>
         </Style.Data>
       </Style.Content>
