@@ -44,12 +44,7 @@ const Details = () => {
     );
   });
 
-  // создать файл с объектами
-  // const[comments, setComments] = useState<CommentProps[]> ([]);  
-  
-  // const addComment = (newComment : CommentProps) => {
-  //   setComments([...comments, newComment]);
-  // }
+
 
   function commentsList(){
     // Функция для добавления нового комментария
@@ -77,6 +72,7 @@ const Details = () => {
       setCommentText(event.target.value);
     }
 
+
     // Создаем массив элементов React, каждый из которых представляет отдельный комментарий
     const commentItems = comments.map((comment) => (
       <CommentItem
@@ -84,6 +80,8 @@ const Details = () => {
         id = {comment.id}
         userName = {comment.userName}
         commentText = {comment.commentText}
+        comments={comments}
+        setComments={setComments}
       />
     ));
 
@@ -96,26 +94,10 @@ const Details = () => {
           <Button variant="primary" type="submit">Add comment</Button>
         </form>
 
-        {/* Форма для удаления комментария */}
-        {/* <form onSubmit =  */}
-  
         {/* Список комментариев */}
         {commentItems}
       </div>
     );
-
-    // return (
-    //   <div>
-    //     {comments.map((comment) => (
-    //       <CommentItem
-    //         key={comment.id}
-    //         id={comment.id}
-    //         userName={comment.userName}
-    //         commentText={comment.commentText}
-    //       />
-    //     ))}
-    //   </div>
-    // );
   }
 
   return (
