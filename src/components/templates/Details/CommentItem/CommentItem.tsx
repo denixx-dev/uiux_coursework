@@ -1,9 +1,10 @@
 import React from 'react';
 import * as Style from './index.styled';
 
-type CommentProps = {
+export type CommentProps = {
+  id: number;
   userName: string;
-  text: string;
+  commentText: string;
 };
 const CommentItem: React.FC<CommentProps> = (props) => {
   return (
@@ -12,7 +13,7 @@ const CommentItem: React.FC<CommentProps> = (props) => {
         <Style.UserName> {props.userName} </Style.UserName>
       </Style.CommentContent>
       <Style.CommentContent>
-        <Style.CommentText>{props.text}</Style.CommentText>
+        <Style.CommentText>{props.commentText}</Style.CommentText>
       </Style.CommentContent>
     </Style.CommentItem>
   );

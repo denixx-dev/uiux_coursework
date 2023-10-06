@@ -7,12 +7,19 @@ import GenreItem from "./GenreItem/GenreItem";
 import StatisticItem from "./StatisticItem/StatisticItem";
 import Torrent from "./TorrentItem";
 import CommentItem from "./CommentItem/CommentItem";
+import {CommentProps} from "./CommentItem/CommentItem";
+import {useState} from 'react';
+import Button from 'react-bootstrap/Button';
 
 import { AiTwotoneLike } from "react-icons/ai";
 
 import Link from "next/link";
 import { BiTimeFive } from "react-icons/bi";
 const Details = () => {
+  const[comments, setComments] = useState<CommentProps[]> ([]);
+  const [userName, setUserName] = useState('');
+  const [commentText, setCommentText] = useState('');
+
   const router = useRouter();
   const { filmRetrieve, isLoading } = useFilmRetrieve(
     (router.query.id as string) || ""
@@ -37,13 +44,78 @@ const Details = () => {
     );
   });
 
-  const commentsList = () => {
-    return (
+  // создать файл с объектами
+  // const[comments, setComments] = useState<CommentProps[]> ([]);  
+  
+  // const addComment = (newComment : CommentProps) => {
+  //   setComments([...comments, newComment]);
+  // }
+
+  function commentsList(){
+    // Функция для добавления нового комментария
+    function addComment(event: React.FormEvent<HTMLFormElement>) {
+      event.preventDefault();
+      const newComment: CommentProps = {
+        id: comments.length + 1,
+        userName: "User " + userName,
+        commentText: "Wrote: " + commentText
+      };
+      setComments([...comments, newComment]);
+      setUserName('');
+      setCommentText('');
+    }
+
+    //Функция для удаления комментария
+
+    // Обработчик изменения поля ввода имени пользователя
+    function handleUserNameChange(event: React.ChangeEvent<HTMLInputElement>) {
+      setUserName(event.target.value);
+    }
+
+    // Обработчик изменения поля ввода текста комментария
+    function handleCommentTextChange(event: React.ChangeEvent<HTMLInputElement>) {
+      setCommentText(event.target.value);
+    }
+
+    // Создаем массив элементов React, каждый из которых представляет отдельный комментарий
+    const commentItems = comments.map((comment) => (
       <CommentItem
-        userName = "Paul"
-        text = "Great film!"
+        key = {comment.id}
+        id = {comment.id}
+        userName = {comment.userName}
+        commentText = {comment.commentText}
       />
+    ));
+
+    return (
+      <div>
+        {/* Форма для добавления нового комментария */}
+        <form onSubmit={addComment}>
+          <input type="text" value={userName} onChange={handleUserNameChange} placeholder="Your name" />
+          <input type="text" value={commentText} onChange={handleCommentTextChange} placeholder="Your comment" />
+          <Button variant="primary" type="submit">Add comment</Button>
+        </form>
+
+        {/* Форма для удаления комментария */}
+        {/* <form onSubmit =  */}
+  
+        {/* Список комментариев */}
+        {commentItems}
+      </div>
     );
+
+    // return (
+    //   <div>
+    //     {comments.map((comment) => (
+    //       <CommentItem
+    //         key={comment.id}
+    //         id={comment.id}
+    //         userName={comment.userName}
+    //         commentText={comment.commentText}
+    //       />
+    //     ))}
+    //   </div>
+    // );
   }
 
   return (

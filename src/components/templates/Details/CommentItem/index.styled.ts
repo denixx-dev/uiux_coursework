@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
 export const CommentItem = styled.div`
-    width:13%;
-    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
+    flex-wrap: wrap;
+    width: 100%;
+    height: 50%;
+    background-color: ${props => props.theme.iconColor};
+    box-shadow: 3px 10px 3px ${props => props.theme.shadowColor};
+    transition: 0.3s;
 `;
 
 export const CommentText = styled.div`
