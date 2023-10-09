@@ -1,15 +1,13 @@
 import React from 'react';
 import * as Style from './index.styled';
 import { FaTimes } from 'react-icons/fa';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export type CommentProps = {
   id: number;
   userName: string;
   commentText: string;
 };
-
-
 
 const CommentItem: React.FC<CommentProps & { comments: CommentProps[]; setComments: React.Dispatch<React.SetStateAction<CommentProps[]>> }> 
 = ({ id, userName, commentText, comments, setComments }) => {
@@ -19,6 +17,7 @@ const CommentItem: React.FC<CommentProps & { comments: CommentProps[]; setCommen
     const updatedComments = localComments.filter(comment => comment.id !== id);
     setLocalComments(updatedComments);
     setComments(updatedComments);
+    
   }
   return (
     <Style.CommentItem>

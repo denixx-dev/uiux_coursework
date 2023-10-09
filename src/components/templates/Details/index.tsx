@@ -8,7 +8,7 @@ import StatisticItem from "./StatisticItem/StatisticItem";
 import Torrent from "./TorrentItem";
 import CommentItem from "./CommentItem/CommentItem";
 import {CommentProps} from "./CommentItem/CommentItem";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 
 import { AiTwotoneLike } from "react-icons/ai";
@@ -16,9 +16,37 @@ import { AiTwotoneLike } from "react-icons/ai";
 import Link from "next/link";
 import { BiTimeFive } from "react-icons/bi";
 const Details = () => {
-  const[comments, setComments] = useState<CommentProps[]> ([]);
+  
+  var pageKey = "";
+
+  if (typeof window !== 'undefined' && window.localStorage) {
+    pageKey = window.location.href;
+  }
+
+  const[comments, setComments] = useState<CommentProps[]> (() => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const localData = localStorage.getItem(pageKey);
+      return localData ? JSON.parse(localData) : [];
+    }
+  });
+
   const [userName, setUserName] = useState('');
   const [commentText, setCommentText] = useState('');
+
+  useEffect (() => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem(pageKey, JSON.stringify(comments));
+    }
+  }, [comments, pageKey]);
+
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined' && window.localStorage) {
+  //     const savedComments = localStorage.getItem('comments');
+  //     if (savedComments) {
+  //       setComments(JSON.parse(savedComments));
+  //     }
+  //   }
+  // }, []);
 
   const router = useRouter();
   const { filmRetrieve, isLoading } = useFilmRetrieve(
@@ -44,8 +72,8 @@ const Details = () => {
     );
   });
 
-
-
+  
+  
   function commentsList(){
     // Функция для добавления нового комментария
     function addComment(event: React.FormEvent<HTMLFormElement>) {
@@ -58,6 +86,8 @@ const Details = () => {
       setComments([...comments, newComment]);
       setUserName('');
       setCommentText('');
+
+      
     }
 
     //Функция для удаления комментария
