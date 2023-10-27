@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const CommentItem = styled.div`
     border-radius: 10px;
-    cursor: pointer;
     display: block;
     flex-wrap: wrap;
     width: 100%;

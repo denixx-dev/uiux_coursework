@@ -7,6 +7,7 @@ import * as Style from "./index.styled";
 const Film: React.FC<MovieList> = (props) => {
   return (
     <Style.Film>
+      <Style.Name>{props.title}</Style.Name>
       <Link href={`/films/${props.id}`}>
         <Style.Content>
           <Style.Cards>
@@ -59,7 +60,7 @@ const Film: React.FC<MovieList> = (props) => {
             </Style.Card2>
           </Style.Cards>
 
-          <Style.Name>{props.title}</Style.Name>
+          {/* Здесь было название фильма */}
 
           <Style.Text>
             {props.year} {props.language}

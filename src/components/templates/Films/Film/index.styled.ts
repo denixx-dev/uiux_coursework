@@ -1,6 +1,6 @@
 import styled from "styled-components"
 export const Card2 = styled.div`
-    position: absolute;
+
     aspect-ratio: 1/1/5;
     display: flex;
     flex-direction: column;
@@ -94,7 +94,7 @@ export const Film = styled.div`
     border-radius:10px;
     overflow: hidden;
     transition: all 0.3s ease;
-    &:hover{
+    /*&:hover{*/
         box-shadow: 0px 0px 5px ${props => props.theme.accentColor1};
         transition: all 0.3s ease;
         & ${Card2}{
@@ -102,7 +102,7 @@ export const Film = styled.div`
             opacity: 1;
             pointer-events: all;
         }
-    }
+    }*/
 `;
 
 export const Content = styled.div`
@@ -133,6 +133,9 @@ export const Card1 = styled.img`
 `;
 
 export const Name = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 0 0 auto;
     flex-wrap: nowrap;
     width: 100%;
@@ -156,6 +159,9 @@ export const Name = styled.div`
 `;
 
 export const Text = styled.div`
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     margin: 10px 0px 10px 0px;
     padding: 0px 10px;
     display:flex;

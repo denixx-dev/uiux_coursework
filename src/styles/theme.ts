@@ -33,7 +33,7 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
-  backgroundColor: "white",
+  backgroundColor: "#267F00",
   textColor: "black",
   infoIconColor: "#FAFAFA",
   iconColor: "white",
@@ -66,7 +66,7 @@ export const lightTheme = {
 
 export const GlobalStyle = createGlobalStyle`
   a{
-    font-family: 'Roboto';
+    font-family: 'Comic Sans MS';
     text-decoration: none;
     color: ${(props) => props.theme.textColor};
   }
@@ -74,6 +74,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background-color: ${(props) => props.theme.backgroundColor};
+    background-image: url(https://i.etsystatic.com/5614762/r/il/10bf9c/2199130954/il_1588xN.2199130954_21kj.jpg);
+    background-position: center;
+    background-blend-mode: screen;
+  
     transition: 0.1s;
     color: ${(props) => props.theme.textColor};
   }

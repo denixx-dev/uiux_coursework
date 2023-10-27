@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     <Style.Header id="header">
       <Style.Content>
         <Style.Logo>
-          <Style.Img src="https://yts.mx/assets/images/website/logo-YTS.svg"></Style.Img>
+          <Style.Img src="E:\Programs\UIUX_labs\next-app\kandinsky-download-1697300966229.png"></Style.Img>
           <Style.Name>HD movies at the smallest file size.</Style.Name>
         </Style.Logo>
 

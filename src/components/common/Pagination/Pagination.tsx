@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
+import { VscArrowUp, VscArrowDown } from "react-icons/vsc";
 
 import { useWindowSize } from "@/hooks/useWindowSize";
 import * as Style from "./index.styled";
@@ -45,6 +45,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
         );
       } else {
         return (
+          // Смена страницы по нажатию на индекс в пагинации
           <Style.Item
             key={`pagination${element}`}
             onClick={() => props.onPageChange(element, props.pageSize)}
@@ -56,17 +57,18 @@ const Pagination: React.FC<PaginationProps> = (props) => {
     });
 
   return (
+    // Стрелочки для переключения страниц пагинации
     <Style.Pagination>
       <Style.Content>
         {portionNumber > 1 && (
           <Style.Item onClick={() => setPortionNumber(portionNumber - 1)}>
-            <VscArrowLeft />
+            <VscArrowDown />
           </Style.Item>
         )}
         {pagesElements}
         {portionCount > portionNumber && (
           <Style.Item onClick={() => setPortionNumber(portionNumber + 1)}>
-            <VscArrowRight />
+            <VscArrowUp/>
           </Style.Item>
         )}
       </Style.Content>

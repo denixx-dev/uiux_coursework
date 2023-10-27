@@ -58,7 +58,7 @@ export const ContentTitle = styled.span`
         font-size: ${props => props.theme.textSizeTitle500};
     }
     & a{
-        font-family: Roboto;
+        font-family: Comic Sans MS;
         font-size:  ${props => props.theme.textSizeTitle};
         font-weight: 500;
         letter-spacing: 1px;

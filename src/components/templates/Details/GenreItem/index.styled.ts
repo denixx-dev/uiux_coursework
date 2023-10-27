@@ -7,16 +7,16 @@ export const GenreItem = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: ${props => props.theme.iconColor};
-    box-shadow: 0px 0px 5px ${props => props.theme.shadowColor};
+    background-color: white;
+    box-shadow: 10px 10px 10px ${props => props.theme.shadowColor};
     font-size: ${props => props.theme.textSizeTextL};
     border-radius: 10px;
-    background-color: ${props => props.theme.accentColor1};
+    background-color: #FFD700;
 `;
 
 export const Text = styled.span`
     font-size: ${props => props.theme.textSizeTextM};
-    color: white;
+    color: black;
     font-weight: 500;
     padding: 0px 10px;
     line-height: 5px;

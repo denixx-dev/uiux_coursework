@@ -43,7 +43,7 @@ export const Content = styled.div`
 
 
 export const Title = styled.span`
-    letter-spacing: 1px;
+    letter-spacing: 10px;
     font-weight: 600;
     display: flex;
     flex: 0 0 auto;
@@ -66,11 +66,15 @@ export const List = styled.div`
     align-items: center;
     align-self: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 30px;
     border-top: 1px solid ${props => props.theme.accentColor1};
     border-bottom: 1px solid ${props => props.theme.accentColor1};
     padding: 20px 0px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    width: 100%;
+    border: solid yellow 10px;
+    background: rgba(255, 0, 0, 0.5);;
+    padding: 50px;
     @media (min-width: 1200px){
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }

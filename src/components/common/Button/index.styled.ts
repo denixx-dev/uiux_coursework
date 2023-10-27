@@ -14,7 +14,7 @@ export const Button = styled.button`
     box-shadow: 0px 0px 5px ${props => props.theme.shadowColor} ;
     color: ${props => props.theme.textColor};
     &:hover{
-        background-color: ${props => props.theme.accentColor1};
+        background-color: blue;
         color: white;
         transition: 0.1s;
     }
