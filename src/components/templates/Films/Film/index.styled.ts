@@ -49,11 +49,10 @@ export const RatingText = styled.div`
 
 export const Genres = styled.div`
     width: 100%;
-    height: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
 `;
 
 export const GenresText = styled.div`
@@ -69,7 +68,7 @@ export const GenresText = styled.div`
 export const Details = styled.button`
     cursor: pointer;
     border: 0;
-    width: 100%;
+    width: 100px;
     margin: 10px 0px;
     height: 40px;
     flex: 0 0 auto;
@@ -141,7 +140,7 @@ export const Name = styled.div`
     width: 100%;
     font-size: ${props => props.theme.textSizeTextM};
     letter-spacing: 1px;
-    overflow: hidden;
+    overflow: visible;
     margin: 10px 0px 0px 0px;
     padding: 0px 10px;
     box-sizing: border-box;
@@ -164,7 +163,6 @@ export const Text = styled.div`
     align-items: center;
     margin: 10px 0px 10px 0px;
     padding: 0px 10px;
-    display:flex;
     flex: 0 0 auto;
     overflow: hidden;
     word-wrap: break-word;

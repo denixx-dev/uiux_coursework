@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Loader from "@/components/common/Loader";
 import { VscArrowUp, VscArrowDown } from "react-icons/vsc";
 
 import { useWindowSize } from "@/hooks/useWindowSize";
@@ -33,6 +34,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
 
   let leftPortionNumber = (portionNumber - 1) * portionSize + 1;
   let rightPortionNumber = portionNumber * portionSize;
+
 
   let pagesElements = pages
     .filter((p) => p >= leftPortionNumber && p <= rightPortionNumber)

@@ -17,6 +17,7 @@ export const Icon = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  color:  ${props => props.theme.accentColor1};
 `;
 
 export const Text = styled.span`
@@ -28,6 +29,6 @@ export const Text = styled.span`
   justify-content: center;
   box-sizing: border-box;
   font-weight: 600;
-  color:  ${props => props.theme.textColor};
+  color:  ${props => props.theme.accentColor1};
 `;
 

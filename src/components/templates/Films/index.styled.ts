@@ -11,14 +11,16 @@ export const Films = styled.section`
 `;
 
 export const Content = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 1000px;
-    padding: 0px 20px;
+    display: grid;
+    flex-direction: row;
+    width: 100px;
+    padding: 0px 0px;
     margin: 0px 0px;
     box-sizing: border-box;
    
     @media (min-width: 1200px){
+        padding: 0px 20px;   
+        margin: 0px 0px;
         width: 1200px;
     }
     @media (max-width: 1200px) and (min-width: 992px)  {
@@ -60,21 +62,20 @@ export const Title = styled.span`
     }
 `;
 
+// Здесь меняем отображение списка фильмов
 export const List = styled.div`
-    display: grid;
-    width: 100%;
-    align-items: center;
-    align-self: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 30px;
+    display: flex;
+    flex-basis: 0;
+    grid-gap: 50px;
     border-top: 1px solid ${props => props.theme.accentColor1};
     border-bottom: 1px solid ${props => props.theme.accentColor1};
-    padding: 20px 0px;
+    padding: 0px 0px;
     box-sizing: border-box;
-    width: 100%;
+    width: 1800px;
     border: solid yellow 10px;
     background: rgba(255, 0, 0, 0.5);;
     padding: 50px;
+    margin: 0px -350px;
     @media (min-width: 1200px){
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }

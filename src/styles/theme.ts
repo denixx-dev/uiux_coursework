@@ -33,11 +33,13 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
-  backgroundColor: "#267F00",
+  backgroundColor: "#4E0000",
+  paginationColor: "#B60000",
   textColor: "black",
+  loaderColor: "#B60000",
   infoIconColor: "#FAFAFA",
   iconColor: "white",
-  accentColor1: `rgb(106,192,69)`,
+  accentColor1: "#FFD800",
   accentColor2: "#00c6ff",
   shadowColor: "rgba(0,0,0,0.2)",
 
@@ -75,6 +77,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-color: ${(props) => props.theme.backgroundColor};
     background-image: url(https://i.etsystatic.com/5614762/r/il/10bf9c/2199130954/il_1588xN.2199130954_21kj.jpg);
+    backdrop-filter: blur(10px);
     background-position: center;
     background-blend-mode: screen;
   

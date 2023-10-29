@@ -4,14 +4,14 @@ export const Pagination = styled.div`
     position: fixed;
     top: 800px;
     display: flex; 
-    width: 60%;
+    width: 55%;
     height: 3%;
     min-height: 40px;
     flex: 0 0 auto;
     justify-content: space-between;
     background-color: ${props => props.theme.bachgroundColor};
     transition: 0.1s;
-    margin: 0px 800px;
+    margin: 0px 950px;
 `;
 
 export const Content = styled.div`
@@ -31,7 +31,7 @@ export const Item = styled.div`
   flex: 0 0 auto;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.iconColor};
+  background-color: ${props => props.theme.paginationColor};
   font-weight: 500; 
   font-size: ${props => props.theme.textSizeTextM};
   height: 100%;
@@ -42,7 +42,6 @@ export const Item = styled.div`
   transition: 0.1s;
   &:hover{
     transition: 0.1s;
-    color: white;
     background-color:${props => props.theme.accentColor1};
    
   }
@@ -51,6 +50,5 @@ export const Item = styled.div`
 `;
 
 export const ActiveItem = styled(Item)`
-  color: white;
   background-color:${props => props.theme.accentColor1};
 `;
