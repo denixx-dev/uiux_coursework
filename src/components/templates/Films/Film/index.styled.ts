@@ -6,7 +6,7 @@ export const Card2 = styled.div`
     flex-direction: column;
     flex: 0 0 auto;
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.7);
@@ -15,7 +15,7 @@ export const Card2 = styled.div`
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
-    padding: 20px;
+    padding: 2px;
     color: white; 
 `;
 
@@ -23,7 +23,7 @@ export const Rating = styled.div`
     display: flex;
     flex: 0 0 auto;
     width: 100%;
-    height: 30%;
+    height: 50%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -69,7 +69,7 @@ export const Details = styled.button`
     cursor: pointer;
     border: 0;
     width: 100px;
-    margin: 10px 0px;
+    margin: 0px 100px;
     height: 40px;
     flex: 0 0 auto;
     border-radius: 10px;
@@ -79,7 +79,7 @@ export const Details = styled.button`
     font-size: ${props=> props.theme.textSizeL};
     font-weight: 600;
     &:hover{
-        background-color: rgba(106,192,69,0.9);
+        background-color: ${props => props.theme.backgroundColor};
     }
 `;
 
@@ -132,12 +132,13 @@ export const Card1 = styled.img`
 `;
 
 export const Name = styled.div`
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
     flex-wrap: nowrap;
     width: 100%;
+    height: 100px;
     font-size: ${props => props.theme.textSizeTextM};
     letter-spacing: 1px;
     overflow: visible;
@@ -145,7 +146,7 @@ export const Name = styled.div`
     padding: 0px 10px;
     box-sizing: border-box;
     text-overflow: ellipsis;   
-    white-space: nowrap;
+    white-space: normal;
     @media (max-width: 992px) and (min-width: 768px)  {
         font-size: ${props => props.theme.textSizeTextM900};
     }

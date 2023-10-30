@@ -6,7 +6,6 @@ export const Films = styled.section`
     height: 100%;
     flex: 0 0 auto;
     justify-content: center;
-    background-color: ${props => props.theme.bachgroundColor};
     transition: 0.1s;
 `;
 
