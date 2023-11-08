@@ -167,6 +167,7 @@ export const Description = styled.div`
 export const Title = styled.div`
     display: flex;
     font-size: ${props=> props.theme.textSizeTitle};
+    color: ${props=> props.theme.accentColor1};
     letter-spacing: 1px;
     font-weight: 500;
 `;
@@ -177,7 +178,7 @@ export const Year = styled.div`
     flex: 0 0 auto;
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.textColor};
+    color: ${props=> props.theme.accentColor1};
 
 
 `;
@@ -218,7 +219,7 @@ export const TorrentsTitle = styled.div`
     flex: 0 0 auto;
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.textColor};
+    color: ${props=> props.theme.accentColor1};
 `;
 
 export const Torrents = styled.div`
@@ -233,7 +234,7 @@ export const CommentsTitle = styled.div`
     flex: 0 0 auto;
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.textColor};
+    color: ${props=> props.theme.accentColor1};
 `;
 
 export const CommentItem = styled.div`
@@ -241,7 +242,25 @@ export const CommentItem = styled.div`
     grid-template-columns: 1fr;
     grid-gap: 10px;
     font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.textColor};
+    color: ${props=> props.theme.accentColor1};
+`;
+
+export const YourNameLabel = styled.div`
+    display: flex;
+    width: 100%;
+    flex: 0 0 auto;
+    font-weight: 600;
+    font-size: ${props=> props.theme.textSizeTextL};
+    color: ${props=> props.theme.accentColor1};
+`;
+
+export const CommentTextLabel = styled.div`
+    display: flex;
+    width: 100%;
+    flex: 0 0 auto;
+    font-weight: 600;
+    font-size: ${props=> props.theme.textSizeTextL};
+    color: ${props=> props.theme.accentColor1};
 `;
 
 

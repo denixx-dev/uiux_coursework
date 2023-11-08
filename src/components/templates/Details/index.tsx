@@ -11,6 +11,7 @@ import {CommentProps} from "./CommentItem/CommentItem";
 import {useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 
+
 import { AiTwotoneLike } from "react-icons/ai";
 
 import Link from "next/link";
@@ -115,11 +116,13 @@ const Details = () => {
       />
     ));
 
+
     return (
-      <div>
+      <div className="my_input"> 
         {/* Форма для добавления нового комментария */}
-        <form onSubmit={addComment}>
+        <form onSubmit={addComment}>          
           <input type="text" value={userName} onChange={handleUserNameChange} placeholder="Your name" />
+          <Style.CommentTextLabel>Your Name:</Style.CommentTextLabel>
           <input type="text" value={commentText} onChange={handleCommentTextChange} placeholder="Your comment" />
           <Button variant="primary" type="submit">Add comment</Button>
         </form>
@@ -194,7 +197,7 @@ const Details = () => {
             <Style.Torrents>{torrentsList}</Style.Torrents>
 
             <Style.CommentsTitle>Comments:</Style.CommentsTitle>
-
+            <Style.YourNameLabel>Your Name:</Style.YourNameLabel>
             <Style.CommentItem>{commentsList()}</Style.CommentItem>
 
           </Style.Description>
