@@ -8,9 +8,11 @@ type StatisticItemProps = {
 const StatisticItem: React.FC<StatisticItemProps> = (props) => {
   return (
     <Style.StatisticItem>
-      <Style.Icon>{props.icon}</Style.Icon>
-      <Style.Text>{props.text}</Style.Text>
+      <div>
+        {props.icon} {props.text}
+      </div>
     </Style.StatisticItem>
+
   );
 };
 

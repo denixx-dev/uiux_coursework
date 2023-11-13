@@ -14,6 +14,8 @@ export const CommentItem = styled.div`
 export const CommentText = styled.div`
     display: flex;
     height: 30px;
+    color: black;
+    font-family: 'Comic Sans MS';
     font-size: ${props => props.theme.textSizeTextM};
     align-items: center;
     @media (max-width: 768px) and (min-width: 576px)  {
@@ -33,6 +35,8 @@ export const CommentContent = styled.div`
 export const UserName = styled.div`
   display: flex;
   height: 30px;
+  color: black;
+  font-family: 'Comic Sans MS';
   font-size: ${props => props.theme.textSizeTextM};
   align-items: center;
   @media (max-width: 768px) and (min-width: 576px)  {

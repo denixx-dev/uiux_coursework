@@ -80,6 +80,7 @@ export const GlobalStyle = createGlobalStyle`
     backdrop-filter: blur(10px);
     background-position: center;
     background-blend-mode: screen;
+    background-attachment: fixed;
   
     transition: 0.1s;
     color: ${(props) => props.theme.textColor};

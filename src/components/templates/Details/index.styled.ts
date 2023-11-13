@@ -158,6 +158,7 @@ export const WatchButton = styled(Button)`
 
 export const Description = styled.div`
     display: grid;
+    font-family: "Comic Sans MS";
     align-items: flex-start;
     align-self: flex-start;
     grid-template-columns: 1fr;
@@ -166,6 +167,7 @@ export const Description = styled.div`
 
 export const Title = styled.div`
     display: flex;
+    text-shadow:  2px 3px 1px rgba(0, 0, 0, 0.75);
     font-size: ${props=> props.theme.textSizeTitle};
     color: ${props=> props.theme.accentColor1};
     letter-spacing: 1px;
@@ -174,6 +176,7 @@ export const Title = styled.div`
 
 export const Year = styled.div`
     display: flex;
+    text-shadow:  2px 3px 1px rgba(0, 0, 0, 0.75);
     width: 100%;
     flex: 0 0 auto;
     font-weight: 600;
@@ -182,11 +185,19 @@ export const Year = styled.div`
 
 
 `;
+
+// Можно добавить бокс на бэкграунд описания
 export const DescriptionFull = styled.div`
     display: flex;
+    background-color: white;
+    padding: 10px 10px;
+    box-shadow: 10px 10px 10px ${props => props.theme.shadowColor};
+    font-size: ${props => props.theme.textSizeTextL};
+    border-radius: 10px;
+    background-color: "white";
     font-size: ${props=> props.theme.textSizeTextM};
     line-height: 25px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
 `;
 export const Genres = styled.div`
@@ -203,9 +214,12 @@ export const Genres = styled.div`
 `;
 
 export const Statistic = styled.div`
-    display: grid;
+    display: block;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap:20px;
+    grid-gap:50px;
+    position: fixed;
+    left: 1500px;
+    margin: 100px 100px;
     @media (max-width: 768px) and (min-width: 576px)  {
         grid-template-columns: 1fr 1fr  1fr 1fr;
     }
@@ -216,6 +230,7 @@ export const Statistic = styled.div`
 export const TorrentsTitle = styled.div`
     display: flex;
     width: 100%;
+    text-shadow:  2px 3px 1px rgba(0, 0, 0, 0.75);
     flex: 0 0 auto;
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
@@ -226,6 +241,7 @@ export const Torrents = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
+    position: sticky;
 `;
 
 export const CommentsTitle = styled.div`
@@ -233,6 +249,7 @@ export const CommentsTitle = styled.div`
     width: 100%;
     flex: 0 0 auto;
     font-weight: 600;
+    text-shadow:  2px 3px 1px rgba(0, 0, 0, 0.75);
     font-size: ${props=> props.theme.textSizeTextL};
     color: ${props=> props.theme.accentColor1};
 `;
@@ -248,6 +265,7 @@ export const CommentItem = styled.div`
 export const YourNameLabel = styled.div`
     display: flex;
     width: 100%;
+    text-shadow:  2px 3px 1px rgba(0, 0, 0, 0.75);
     flex: 0 0 auto;
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
@@ -258,6 +276,7 @@ export const CommentTextLabel = styled.div`
     display: flex;
     width: 100%;
     flex: 0 0 auto;
+    text-shadow:  2px 3px 1px rgba(0, 0, 0, 0.75);
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
     color: ${props=> props.theme.accentColor1};

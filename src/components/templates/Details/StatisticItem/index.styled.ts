@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const StatisticItem = styled.div`
     aspect-ratio: 1/1;
-    width:100%;
+    width:60px;
+    height: 50px;
     display: flex;
+    font-family: Comic Sans MS;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -24,6 +26,7 @@ export const Icon = styled.div`
 `;
 
 export const Text = styled.span`
+    
     font-size: ${props => props.theme.textSizeTextM};
     @media (max-width: 768px) and (min-width: 576px)  {
         font-size: ${props => props.theme.textSizeTextM700};

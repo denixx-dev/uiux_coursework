@@ -12,6 +12,7 @@ import {useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 
 
+
 import { AiTwotoneLike } from "react-icons/ai";
 
 import Link from "next/link";
@@ -99,9 +100,10 @@ const Details = () => {
     }
 
     // Обработчик изменения поля ввода текста комментария
-    function handleCommentTextChange(event: React.ChangeEvent<HTMLInputElement>) {
+    function handleCommentTextChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
       setCommentText(event.target.value);
     }
+
 
 
     // Создаем массив элементов React, каждый из которых представляет отдельный комментарий
@@ -118,13 +120,14 @@ const Details = () => {
 
 
     return (
-      <div className="my_input"> 
+      <div> 
         {/* Форма для добавления нового комментария */}
-        <form onSubmit={addComment}>          
-          <input type="text" value={userName} onChange={handleUserNameChange} placeholder="Your name" />
-          <Style.CommentTextLabel>Your Name:</Style.CommentTextLabel>
-          <input type="text" value={commentText} onChange={handleCommentTextChange} placeholder="Your comment" />
-          <Button variant="primary" type="submit">Add comment</Button>
+        <form onSubmit={addComment}>
+          <Style.YourNameLabel>Your Name:</Style.YourNameLabel>
+          <input className="name_form_control" type="text" value={userName} onChange={handleUserNameChange} />
+          <Style.CommentTextLabel>Your Comment:</Style.CommentTextLabel>
+          <textarea className="comment_form_control" value={commentText} onChange={(e) => handleCommentTextChange(e)}/>
+          <Button className="rounded-square" variant="primary" type="submit">Add comment</Button>
         </form>
 
         {/* Список комментариев */}
@@ -196,8 +199,8 @@ const Details = () => {
 
             <Style.Torrents>{torrentsList}</Style.Torrents>
 
-            <Style.CommentsTitle>Comments:</Style.CommentsTitle>
-            <Style.YourNameLabel>Your Name:</Style.YourNameLabel>
+            <Style.CommentsTitle>Write a comment!</Style.CommentsTitle>
+            
             <Style.CommentItem>{commentsList()}</Style.CommentItem>
 
           </Style.Description>
