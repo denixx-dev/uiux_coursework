@@ -1,4 +1,5 @@
 import { useFilmList } from "@/lib/hooks/useFilmList";
+import { useWindowSize } from "@/hooks/useWindowSize";
 import { useState, useEffect } from "react";
 import Pagination from "../../common/Pagination/Pagination";
 import Film from "./Film/Film";
@@ -9,9 +10,28 @@ const Films = () => {
   // Начинаем с первой страницы фильмов
   const [page, setPage] = useState(1);
   // Кол-во фильмов на странице
-  const pageSize = 5;
+  // const pageSize = 5;
+  // const [pageSize, setPageSize] = useState(5);
+  const [pageSize, setPageSize] = useState(5);
   const { filmList, isLoading } = useFilmList(String(page), String(pageSize));
   const [loading, setLoading] = useState(false);
+  const size = useWindowSize();
+  const windowWidth = size[0];
+  const windowHeight = size[1];
+  
+  // alert(windowWidth);
+  // Меняю кол-во фильмов на экране по мере его масштабирования в большую или меньшую стороны
+  useEffect(() => {
+    if (windowWidth == 1920) {
+      setPageSize(5);
+    } 
+    else if (windowWidth > 1920){
+      setPageSize(10);
+    }
+    else if (windowWidth < 1920){
+      setPageSize(3);
+    }
+  }, [windowWidth, windowHeight]);
 
   let prevVal = page;
 
