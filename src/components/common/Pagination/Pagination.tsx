@@ -14,18 +14,39 @@ type PaginationProps = {
 const Pagination: React.FC<PaginationProps> = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
   let portionSize = 5;
+  const [paginationStyleFlag, setPaginationStyleFlag] = useState(0);
+  const size = useWindowSize();
+  const windowWidth = size[0];
+  const windowHeight = size[1];
+  
+  // alert(windowWidth);
+  // Меняю кол-во фильмов на экране 
+  // по мере его масштабирования в большую или меньшую стороны
+  // адаптивная верстка крч на главной странице
+  useEffect(() => {
+    if (windowWidth < 1920){
+      setPaginationStyleFlag(1);
+    }
+    else {
+      setPaginationStyleFlag(0);
+    }
+  }, [windowWidth, windowHeight]);
 
-  if (useWindowSize()[0] > 900) {
+
+  // Кол-во "порций" страниц пагинации
+  if (windowWidth >= 1920) {
     portionSize = 10;
-  } else {
-    portionSize = 5;
   }
-  if (useWindowSize()[0] < 300) {
-    portionSize = 3;
+  if (windowWidth < 300) {
+    portionSize = 2;
   }
 
   let pages = [];
-  for (let i = 1; i <= pagesCount; i++) {
+  // for (let i = 1; i <= pagesCount; i++) {
+  //   pages.push(i);
+  // }
+
+  for (let i = pagesCount; i >= 1; i--){
     pages.push(i);
   }
 
@@ -57,10 +78,31 @@ const Pagination: React.FC<PaginationProps> = (props) => {
         );
       }
     });
-
-  return (
-    // Стрелочки для переключения страниц пагинации
-    <Style.Pagination>
+  
+  if (paginationStyleFlag == 1){
+    return (
+      // Стрелочки для переключения страниц пагинации
+      <Style.ScaledPagination>
+        <Style.ScaledContent>
+          {portionNumber > 1 && (
+            <Style.ScaledItem onClick={() => setPortionNumber(portionNumber - 1)}>
+              <VscArrowDown />
+            </Style.ScaledItem>
+          )}
+          {pagesElements}
+          {portionCount > portionNumber && (
+            <Style.ScaledItem onClick={() => setPortionNumber(portionNumber + 1)}>
+              <VscArrowUp/>
+            </Style.ScaledItem>
+          )}
+        </Style.ScaledContent>
+      </Style.ScaledPagination>
+      );
+  }
+  else{
+    return (
+      // Стрелочки для переключения страниц пагинации
+      <Style.Pagination>
       <Style.Content>
         {portionNumber > 1 && (
           <Style.Item onClick={() => setPortionNumber(portionNumber - 1)}>
@@ -74,7 +116,8 @@ const Pagination: React.FC<PaginationProps> = (props) => {
           </Style.Item>
         )}
       </Style.Content>
-    </Style.Pagination>
-  );
+      </Style.Pagination>
+    )
+  }
 };
 export default Pagination;

@@ -41,15 +41,6 @@ const Details = () => {
     }
   }, [comments, pageKey]);
 
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined' && window.localStorage) {
-  //     const savedComments = localStorage.getItem('comments');
-  //     if (savedComments) {
-  //       setComments(JSON.parse(savedComments));
-  //     }
-  //   }
-  // }, []);
-
   const router = useRouter();
   const { filmRetrieve, isLoading } = useFilmRetrieve(
     (router.query.id as string) || ""
@@ -91,8 +82,6 @@ const Details = () => {
 
       
     }
-
-    //Функция для удаления комментария
 
     // Обработчик изменения поля ввода имени пользователя
     function handleUserNameChange(event: React.ChangeEvent<HTMLInputElement>) {
